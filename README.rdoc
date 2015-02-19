@@ -1,0 +1,8 @@
+DiverseOut API
+
+This API serves is the back-end server side API that serves DiverseOut, a site that aggregates data on tech companies' diversity statistics.
+
+To Dos:
+
+- Define endpoints
+- Deploy to Heroku
