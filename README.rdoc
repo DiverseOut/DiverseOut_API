@@ -12,74 +12,82 @@ To-do:
 Proposed schema
 
 TABLE:COMPANY
-has many admins
-has one managers table
-has one tech_workers table
-has one non_tech_workers table
-columns:
--num_total_employees
--num_employees_reporting
--num_male_employees
--num_female_emplotees
--num_gender_decline_to_state
--num_gender_other
--num_white
--num_asian
--num_hispanic
--num_black
--num_undeclared_race
--num_multiracial
+- has many admins
+- has one managers table
+- has one tech_workers table
+- has one non_tech_workers table
+
+- columns:
+- num_total_employees
+- num_employees_reporting
+- num_male_employees
+- num_female_emplotees
+- num_gender_decline_to_state
+- num_gender_other
+- num_white
+- num_asian
+- num_hispanic
+- num_black
+- num_undeclared_race
+- num_multiracial
 
 TABLE:ADMIN
-belongs_to: company
-columns:
--first_name
--last_name
--email
--password
--title
+- belongs_to: company
+
+- columns:
+- first_name
+- last_name
+- email
+- password
+- title
 
 TABLE:MANAGERS
-belongs_to: company
--num_total_employees
--num_employees_reporting
--num_male_employees
--num_female_emplotees
--num_gender_decline_to_state
--num_gender_other
--num_white
--num_asian
--num_hispanic
--num_black
--num_undeclared_race
--num_multiracial
+- belongs_to: company
+
+- columns:
+- num_total_employees
+- num_employees_reporting
+- num_male_employees
+- num_female_emplotees
+- num_gender_decline_to_state
+- num_gender_other
+- num_white
+- num_asian
+- num_hispanic
+- num_black
+- num_undeclared_race
+- num_multiracial
 
 TABLE:TECH WORKERS
-belongs_to: company
--num_total_employees
--num_employees_reporting
--num_male_employees
--num_female_emplotees
--num_gender_decline_to_state
--num_gender_other
--num_white
--num_asian
--num_hispanic
--num_black
--num_undeclared_race
--num_multiracial
+- belongs_to: company
+
+- columns:
+- num_total_employees
+- num_employees_reporting
+- num_male_employees
+- num_female_emplotees
+- num_gender_decline_to_state
+- num_gender_other
+- num_white
+- num_asian
+- num_hispanic
+- num_black
+- num_undeclared_race
+- num_multiracial
 
 TABLE:NON-TECH WORKERS
-belongs_to: company
--num_total_employees
--num_employees_reporting
--num_male_employees
--num_female_emplotees
--num_gender_decline_to_state
--num_gender_other
--num_white
--num_asian
--num_hispanic
--num_black
--num_undeclared_race
--num_multiracial
+- belongs_to: company
+
+- columns:
+- num_total_employees
+- num_employees_reporting
+- num_male_employees
+- num_female_emplotees
+- num_gender_decline_to_state
+- num_gender_other
+- num_white
+- num_asian
+- num_hispanic
+- num_black
+- num_undeclared_race
+- num_multiracial
