@@ -4,7 +4,8 @@ This is the back-end server side API that serves DiverseOut, a site that aggrega
 
 To-do:
 
-- Set up controllers/models
+- Verify Migrations (make sure ALL relationships are accurate)
+- Set up Routes (make sure resources are correct)
 - Define endpoints
 - Deploy to Heroku
 
