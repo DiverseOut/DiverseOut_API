@@ -4,5 +4,7 @@ class CreateSurveyAttributeGroups < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_foreign_key :survey_attribute_groups, :surveys
+    add_foreign_key :survey_attribute_groups, :attribute_groups
   end
 end

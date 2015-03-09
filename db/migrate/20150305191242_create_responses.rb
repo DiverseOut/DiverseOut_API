@@ -6,5 +6,7 @@ class CreateResponses < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_foreign_key :responses, :companies
+    add_foreign_key :responses, :individual_attributes
+    add_foreign_key :responses, :employee_types
   end
 end

@@ -8,7 +8,7 @@ To-do:
 - Define endpoints
 - Deploy to Heroku
 
-![Image](schema.png)
+![schema](schema.png)
 
 attributes:
 
