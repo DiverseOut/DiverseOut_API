@@ -1,83 +1,100 @@
 Rails.application.routes.draw do
-  get 'responses/index'
 
-  get 'responses/show'
+  root 'companies#index'
 
-  get 'responses/create'
+  resources :companies do
+    resources :surveys do
+      resources :survey_attribute_group
+    end
+    resources :admins
+    resources :responses
+  end
 
-  get 'responses/edit'
+  resources :attribute_groups do
+    resources :individual_attributes
+  end
 
-  get 'responses/update'
+  resources :employee_types
 
-  get 'responses/destroy'
+  # get 'responses/index'
 
-  get 'employee_types/index'
+  # get 'responses/show'
 
-  get 'employee_types/show'
+  # get 'responses/create'
 
-  get 'employee_types/create'
+  # get 'responses/edit'
 
-  get 'employee_types/edit'
+  # get 'responses/update'
 
-  get 'employee_types/update'
+  # get 'responses/destroy'
 
-  get 'employee_types/destroy'
+  # get 'employee_types/index'
 
-  get 'attributes/index'
+  # get 'employee_types/show'
 
-  get 'attributes/show'
+  # get 'employee_types/create'
 
-  get 'attributes/create'
+  # get 'employee_types/edit'
 
-  get 'attributes/edit'
+  # get 'employee_types/update'
 
-  get 'attributes/update'
+  # get 'employee_types/destroy'
 
-  get 'attributes/destroy'
+  # get 'attributes/index'
 
-  get 'attribute_groups/index'
+  # get 'attributes/show'
 
-  get 'attribute_groups/show'
+  # get 'attributes/create'
 
-  get 'attribute_groups/create'
+  # get 'attributes/edit'
 
-  get 'attribute_groups/edit'
+  # get 'attributes/update'
 
-  get 'attribute_groups/update'
+  # get 'attributes/destroy'
 
-  get 'attribute_groups/destroy'
+  # get 'attribute_groups/index'
 
-  get 'surveys/show'
+  # get 'attribute_groups/show'
 
-  get 'surveys/create'
+  # get 'attribute_groups/create'
 
-  get 'surveys/edit'
+  # get 'attribute_groups/edit'
 
-  get 'surveys/update'
+  # get 'attribute_groups/update'
 
-  get 'surveys/destroy'
+  # get 'attribute_groups/destroy'
 
-  get 'admins/index'
+  # get 'surveys/show'
 
-  get 'admins/show'
+  # get 'surveys/create'
 
-  get 'admins/create'
+  # get 'surveys/edit'
 
-  get 'admins/edit'
+  # get 'surveys/update'
 
-  get 'admins/update'
+  # get 'surveys/destroy'
 
-  get 'admins/destroy'
+  # get 'admins/index'
 
-  get 'companies/index'
+  # get 'admins/show'
 
-  get 'companies/createshow'
+  # get 'admins/create'
 
-  get 'companies/edit'
+  # get 'admins/edit'
 
-  get 'companies/update'
+  # get 'admins/update'
 
-  get 'companies/destroy'
+  # get 'admins/destroy'
+
+  # get 'companies/index'
+
+  # get 'companies/createshow'
+
+  # get 'companies/edit'
+
+  # get 'companies/update'
+
+  # get 'companies/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

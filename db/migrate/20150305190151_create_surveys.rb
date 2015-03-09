@@ -2,6 +2,7 @@ class CreateSurveys < ActiveRecord::Migration
   def change
     create_table :surveys do |t|
       t.references :company, index: true
+      t.string :secret_login_key
 
       t.timestamps null: false
     end
