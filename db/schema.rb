@@ -62,16 +62,25 @@ ActiveRecord::Schema.define(version: 20150305191507) do
 
   create_table "responses", force: :cascade do |t|
     t.integer  "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "individual_attribute_id"
+    t.integer  "employee_type_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "responses", ["company_id"], name: "index_responses_on_company_id"
+  add_index "responses", ["employee_type_id"], name: "index_responses_on_employee_type_id"
+  add_index "responses", ["individual_attribute_id"], name: "index_responses_on_individual_attribute_id"
 
   create_table "survey_attribute_groups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "survey_id"
+    t.integer  "attribute_group_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
+
+  add_index "survey_attribute_groups", ["attribute_group_id"], name: "index_survey_attribute_groups_on_attribute_group_id"
+  add_index "survey_attribute_groups", ["survey_id"], name: "index_survey_attribute_groups_on_survey_id"
 
   create_table "surveys", force: :cascade do |t|
     t.integer  "company_id"

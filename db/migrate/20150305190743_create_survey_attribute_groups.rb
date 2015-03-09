@@ -1,6 +1,8 @@
 class CreateSurveyAttributeGroups < ActiveRecord::Migration
   def change
     create_table :survey_attribute_groups do |t|
+      t.references :survey, index: true
+      t.references :attribute_group, index: true
 
       t.timestamps null: false
     end
