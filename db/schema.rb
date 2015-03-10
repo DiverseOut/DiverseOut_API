@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150305191507) do
   end
 
   create_table "employee_types", force: :cascade do |t|
+    t.string   "type_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
