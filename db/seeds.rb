@@ -2,7 +2,27 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-############ EMPLOYEE GROUP ##################
+############ MOCK COMPANIES ##################
+
+facebook = Company.create(
+  name: "Facebook",
+  street_num: 123,
+  street: "Facebook Street",
+  city: "Palo Alto",
+  state: "California",
+  country: "USA"
+  )
+
+google = Company.create(
+  name: "Google",
+  street_num: 467,
+  street: "Google Street",
+  city: "Mountain View",
+  state: "California",
+  country: "USA"
+  )
+
+############ EMPLOYEE GROUPS ##################
 
 all_employees = EmployeeType.create(type_name: "All Employees")
 
@@ -118,7 +138,7 @@ disability.individual_attributes << IndividualAttribute.new(attribute_name: "Mul
 
 ################ RELIGION ################
 
-religion = AttributeGroup.create(attribute_name: "African Anglicanism/diasporic religions")
+religion = AttributeGroup.create(group_name: "Religion")
 
 ## Question: "Religion(s) you identify with":
 
@@ -166,33 +186,24 @@ religion.individual_attributes << IndividualAttribute.new(attribute_name: "Unita
 
 ## Question: "What's your highest educational milestone?":
 
-education = AttributeGroup.create(attribute_name: "Education")
+education = AttributeGroup.create(group_name: "Education")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some High School")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "High School Diploma")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some College")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "AA degree")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "BA/BS degree")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some graduate work")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Graduate Degree (MA, MS, JD, etc)")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral work")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral degree (Ph.D. , MD)")
 
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Trade school diploma/certificate")

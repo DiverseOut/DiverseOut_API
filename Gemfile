@@ -4,19 +4,19 @@ gem 'rails', '4.2.0'
 
 gem 'rails-api'
 
+gem 'rspec-rails'
 
+gem 'bcrypt'
 
-group :test do
-gem 'rspec-rails' , '~> 2.0'
-end
+gem 'bcrypt-ruby'
 
+gem 'shotgun'
 
-gem 'spring', :group => :development
-gem 'shoulda', :group => :development
-gem 'shoulda-context', :group => :development
-gem 'shoulda-matchers', :group => :development
+gem 'spring'#, :group => :development
+gem 'shoulda'#, :group => :development
+gem 'shoulda-context'#, :group => :development
+gem 'shoulda-matchers'#, :group => :development
 # gem 'rspec', :group => :development
-
 
 gem 'sqlite3'
 

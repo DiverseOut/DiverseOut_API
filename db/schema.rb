@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150305191507) do
     t.integer  "street_num_line_2"
     t.string   "street"
     t.string   "city"
+    t.string   "state"
     t.string   "country"
     t.integer  "num_total_employees"
     t.integer  "num_managers"

@@ -6,6 +6,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.integer :street_num_line_2
       t.string :street
       t.string :city
+      t.string :state
       t.string :country
       t.integer :num_total_employees
       t.integer :num_managers
