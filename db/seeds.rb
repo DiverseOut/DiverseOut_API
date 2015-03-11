@@ -2,7 +2,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-############ EMPLOYEE GROUP ##################
+############ EMPLOYEE GROUPS ##################
 
 all_employees = EmployeeType.create(type_name: "All Employees")
 
@@ -168,31 +168,22 @@ religion.individual_attributes << IndividualAttribute.new(attribute_name: "Unita
 
 education = AttributeGroup.create(attribute_name: "Education")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some High School")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "High School Diploma")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some College")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "AA degree")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "BA/BS degree")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Some graduate work")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Graduate Degree (MA, MS, JD, etc)")
 
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral work")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral degree (Ph.D. , MD)")
 
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
-
-
-education.individual_attributes << IndividualAttribute.new(attribute_name: "")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Trade school diploma/certificate")
