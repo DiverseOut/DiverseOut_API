@@ -6,6 +6,8 @@ gem 'rails-api'
 
 gem 'rspec-rails'
 
+gem 'bcrypt'
+
 gem 'bcrypt-ruby'
 
 gem 'shotgun'

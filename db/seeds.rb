@@ -2,6 +2,26 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
+############ MOCK COMPANIES ##################
+
+facebook = Company.create(
+  name: "Facebook",
+  street_num: 123,
+  street: "Facebook Street",
+  city: "Palo Alto",
+  state: "California",
+  country: "USA"
+  )
+
+google = Company.create(
+  name: "Google",
+  street_num: 467,
+  street: "Google Street",
+  city: "Mountain View",
+  state: "California",
+  country: "USA"
+  )
+
 ############ EMPLOYEE GROUPS ##################
 
 all_employees = EmployeeType.create(type_name: "All Employees")
@@ -118,7 +138,7 @@ disability.individual_attributes << IndividualAttribute.new(attribute_name: "Mul
 
 ################ RELIGION ################
 
-religion = AttributeGroup.create(attribute_name: "African Anglicanism/diasporic religions")
+religion = AttributeGroup.create(group_name: "Religion")
 
 ## Question: "Religion(s) you identify with":
 
@@ -166,7 +186,7 @@ religion.individual_attributes << IndividualAttribute.new(attribute_name: "Unita
 
 ## Question: "What's your highest educational milestone?":
 
-education = AttributeGroup.create(attribute_name: "Education")
+education = AttributeGroup.create(group_name: "Education")
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Some High School")
 

@@ -133,6 +133,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bcrypt-ruby
   rails (= 4.2.0)
   rails-api
