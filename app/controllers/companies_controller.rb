@@ -14,15 +14,11 @@ class CompaniesController < ApplicationController
   def create
     company = Company.create(company_params)
 
-    respond_to do |format|
-      if company.save
-        format.html { redirect_to questions_path, notice: 'Company was successfully created.' }
-        format.js   {}
-        format.json { render json: company, status: :created, location: company }
-      else
-        format.html { render action: "new" }
-        format.json { render json: company.errors, status: :unprocessable_entity }
-      end
+
+    if company.save
+      render :json => admin
+    else
+      render :json => {:errors => company.errors.full_messages}
     end
 
   end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'companies#index'
 
-
+  match '/*path' => 'application#options', :via => :options
 
   resources :admins do
     resources :companies, only: [:create, :edit, :update, :destroy] do

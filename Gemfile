@@ -10,6 +10,8 @@ gem 'bcrypt'
 
 gem 'bcrypt-ruby'
 
+gem 'rack-cors', require: 'rack/cors'
+
 gem 'shotgun'
 
 gem 'spring'#, :group => :development

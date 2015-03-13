@@ -1,6 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :cors_preflight_check
-  after_filter :cors_set_access_control_headers
+  # before_filter :allow_cors
 
   def index
     admins = Admin.all
@@ -15,16 +14,12 @@ class AdminsController < ApplicationController
   def create
     admin = Admin.create(admin_params)
 
-    respond_to do |format|
-      if admin.save
-        format.html { redirect_to questions_path, notice: 'admin was successfully created.' }
-        format.js   {}
-        format.json { render json: admin, status: :created, location: admin }
-      else
-        format.html { render action: "new" }
-        format.json { render json: admin.errors, status: :unprocessable_entity }
-      end
+    if admin.save
+      render :json => admin
+    else
+      render :json => {:errors => admin.errors.full_messages}
     end
+
   end
 
   def edit
@@ -46,26 +41,15 @@ class AdminsController < ApplicationController
   end
 
 private
-  # For all responses in this controller, return the CORS access control headers.
-    def cors_set_access_control_headers
-      headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-      headers['Access-Control-Max-Age'] = "1728000"
-    end
 
-    # If this is a preflight OPTIONS request, then short-circuit the
-    # request, return only the necessary headers and return an empty
-    # text/plain.
+  # def allow_cors
+  #   headers['Access-Control-Allow-Origin'] = '*'
+  #   headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, PATCH, DELETE, OPTIONS'
+  #   headers['Access-Control-Allow-Headers'] = 'Origin Content-Type, Accept, Authorization, Token'
+  # end
 
-    def cors_preflight_check
-      headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version'
-      headers['Access-Control-Max-Age'] = '1728000'
-    end
-
-    def admin_params
-      params.require(:first_name, :last_name, :password).permit(:first_name, :last_name, :job_title, :password)
-    end
+  def admin_params
+    params.permit(:first_name, :last_name, :job_title, :password)
+  end
 
 end
