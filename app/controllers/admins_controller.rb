@@ -1,19 +1,33 @@
 class AdminsController < ApplicationController
-  # before_filter :allow_cors
 
   def index
     admins = Admin.all
     render :json => admins
   end
 
+  def authenticate
+    admin = Admin.find_by(email: params[:email], password_hash: params[:password])
+
+    if admin
+      render :json => admin
+    else
+      render :json => {:errors => "No user found"}
+    end
+  end
+
   def show
     admin = Admin.find(params[:id])
-    render :json => admin
+
+    if admin
+      render :json => admin
+    else
+      render :json => {:errors => "No user found"}
+    end
   end
 
   def create
     admin = Admin.create(admin_params)
-
+    p admin
     if admin.save
       render :json => admin
     else
@@ -31,9 +45,9 @@ class AdminsController < ApplicationController
     admin = Admin.find(params[:id])
 
     if admin.update(admin_params)
-      redirect_to admin
+      render :json => admin
     else
-      render 'edit'
+      render :json => {:errors => admin.errors.full_messages}
     end
   end
 
@@ -42,14 +56,8 @@ class AdminsController < ApplicationController
 
 private
 
-  # def allow_cors
-  #   headers['Access-Control-Allow-Origin'] = '*'
-  #   headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, PATCH, DELETE, OPTIONS'
-  #   headers['Access-Control-Allow-Headers'] = 'Origin Content-Type, Accept, Authorization, Token'
-  # end
-
   def admin_params
-    params.permit(:first_name, :last_name, :job_title, :password)
+    params.permit(:first_name, :last_name, :job_title, :password_hash, :email)
   end
 
 end
