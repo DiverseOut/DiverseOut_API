@@ -13,6 +13,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.integer :num_tech_workers
       t.integer :num_non_tech_workers
       t.string :website_url
+      t.string :thumbnail_url
 
       t.timestamps null: false
     end

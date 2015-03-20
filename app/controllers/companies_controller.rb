@@ -7,13 +7,12 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    company = company.find(params[:id])
-    render :json => company
+    company = Company.find(params[:id])
+    render :json => {company: company, surveys: company.surveys}
   end
 
   def create
     company = Company.create(company_params)
-
 
     if company.save
       render :json => admin

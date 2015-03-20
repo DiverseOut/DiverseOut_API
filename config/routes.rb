@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'companies#index'
 
+  get 'admins/authenticate', to: 'admins#authenticate'
+
+  get 'attribute_groups', to: 'attribute_groups#index'
+
   match '/*path' => 'application#options', :via => :options
 
   resources :admins do
