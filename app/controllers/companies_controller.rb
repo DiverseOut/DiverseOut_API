@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
     company = Company.create(company_params)
 
     if company.save
-      render :json => admin
+      render :json => company
     else
       render :json => {:errors => company.errors.full_messages}
     end
@@ -58,7 +58,7 @@ class CompaniesController < ApplicationController
 
   private
     def company_params
-      params.require(:name).permit(:name, :street_num, :street_num_line_2, :street, :city, :country, :num_total_employees, :num_manager, :num_tech_workers, :num_non_tech_workers, :website_url)
+      params.permit(:name, :street_num, :street_num_line_2, :street, :city, :country, :num_total_employees, :num_manager, :num_tech_workers, :num_non_tech_workers, :website_url)
     end
 
 end
