@@ -27,7 +27,7 @@ class AdminsController < ApplicationController
 
   def create
     admin = Admin.create(admin_params)
-    p admin
+
     if admin.save
       render :json => admin
     else
