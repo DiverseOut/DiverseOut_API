@@ -58,7 +58,7 @@ class CompaniesController < ApplicationController
 
   private
     def company_params
-      params.permit(:name, :street_num, :street_num_line_2, :street, :city, :country, :num_total_employees, :num_manager, :num_tech_workers, :num_non_tech_workers, :website_url)
+      params.permit(:name, :street_num, :street_num_line_2, :street, :city, :state, :country, :num_total_employees, :num_manager, :num_tech_workers, :num_non_tech_workers, :website_url)
     end
 
 end
