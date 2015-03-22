@@ -6,6 +6,7 @@
 
 facebook = Company.create(
   name: "Facebook",
+  id: 1
   street_num: 123,
   street: "Facebook Street",
   city: "Palo Alto",
@@ -13,14 +14,28 @@ facebook = Company.create(
   country: "USA"
   )
 
-google = Company.create(
-  name: "Google",
-  street_num: 467,
-  street: "Google Street",
-  city: "Mountain View",
-  state: "California",
-  country: "USA"
-  )
+# google = Company.create(
+#   name: "Google",
+#   street_num: 467,
+#   street: "Google Street",
+#   city: "Mountain View",
+#   state: "California",
+#   country: "USA"
+#   )
+
+############ MOCK ADMIN ##################
+
+adminjoe = Admin.create(
+  id: 1
+  company_id: 1
+  first_name:
+  last_name:
+  job_title:
+  email:
+  password_hash:
+)
+
+
 
 ############ EMPLOYEE GROUPS ##################
 
@@ -39,11 +54,11 @@ gender = AttributeGroup.create(
 )
 
 gender.individual_attributes << IndividualAttribute.new(
-    attribute_name: "Man"
+    attribute_name: "Male"
   )
 
 gender.individual_attributes << IndividualAttribute.new(
-    attribute_name: "Woman"
+    attribute_name: "Female"
   )
 
 gender.individual_attributes << IndividualAttribute.new(

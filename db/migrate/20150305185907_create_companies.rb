@@ -3,7 +3,7 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.integer :street_num
-      t.integer :street_num_line_2
+      t.string :street_num_line_2
       t.string :street
       t.string :city
       t.string :state
