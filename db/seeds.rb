@@ -6,46 +6,31 @@
 
 facebook = Company.create(
   name: "Facebook",
-  id: 1
+  id: 1,
   street_num: 123,
+  street_num_line_2: "Suite C",
   street: "Facebook Street",
   city: "Palo Alto",
   state: "California",
   country: "USA"
   )
 
-# google = Company.create(
-#   name: "Google",
-#   street_num: 467,
-#   street: "Google Street",
-#   city: "Mountain View",
-#   state: "California",
-#   country: "USA"
-#   )
-
-############ MOCK ADMIN ##################
-
-adminjoe = Admin.create(
-  id: 1
-  company_id: 1
-  first_name:
-  last_name:
-  job_title:
-  email:
-  password_hash:
-)
-
-
+google = Company.create(
+  name: "Google",
+  id: 2,
+  street_num: 467,
+  street_num_line_2: "Suite D",
+  street: "Google Street",
+  city: "Mountain View",
+  state: "California",
+  country: "USA"
+  )
 
 ############ EMPLOYEE GROUPS ##################
 
-all_employees = EmployeeType.create(type_name: "All Employees")
+managers = EmployeeType.create(type_name: "Manager")
 
-managers = EmployeeType.create(type_name: "Managers")
-
-non_tech_workers = EmployeeType.create(type_name: "Non Tech Workers")
-
-tech_workers = EmployeeType.create(type_name: "Tech Workers")
+tech_workers = EmployeeType.create(type_name: "Tech Worker/Engineer")
 
 ############ GENDER #####################
 
@@ -111,16 +96,24 @@ sexual_orientation = AttributeGroup.create(
 
 sexual_orientation.individual_attributes << IndividualAttribute.new(attribute_name: "Gay")
 
-gender.individual_attributes << IndividualAttribute.new(
+sexual_orientation.individual_attributes << IndividualAttribute.new(
     attribute_name: "Lesbian"
   )
 
-gender.individual_attributes << IndividualAttribute.new(
+sexual_orientation.individual_attributes << IndividualAttribute.new(
     attribute_name: "Bisexual"
   )
 
-gender.individual_attributes << IndividualAttribute.new(
+sexual_orientation.individual_attributes << IndividualAttribute.new(
     attribute_name: "HeteroSexual"
+  )
+
+sexual_orientation.individual_attributes << IndividualAttribute.new(
+    attribute_name: "Queer"
+  )
+
+sexual_orientation.individual_attributes << IndividualAttribute.new(
+    attribute_name: "Asexual"
   )
 ################ FAMILY STATUS ################
 

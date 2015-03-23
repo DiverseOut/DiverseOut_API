@@ -13,12 +13,17 @@ class SurveysController < ApplicationController
       attribute_groups << {group: group, individual_attributes: group.individual_attributes}
     end
 
-    render :json => attribute_groups
+    survey_obj = {
+      employee_types: EmployeeType.all,
+      attribute_groups: attribute_groups
+    }
+
+    render :json => survey_obj
   end
 
   def create
     survey = Survey.create(company_id: params[:company_id], secret_login_key: params[:secret_login])
-    attribute_group_ids = attr_groups
+    attribute_group_ids = attribute_groups
 
     attribute_group_ids.each do |group_id|
       survey.attribute_groups << AttributeGroup.find(group_id)

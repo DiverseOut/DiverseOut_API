@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :response_employee_type do
+    
+  end
+
 
   factory :company do
     name "LinkedIn"
