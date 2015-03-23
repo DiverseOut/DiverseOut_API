@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305191507) do
+ActiveRecord::Schema.define(version: 20150322214347) do
 
   create_table "admins", force: :cascade do |t|
     t.integer  "company_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150305191507) do
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.integer  "street_num"
-    t.integer  "street_num_line_2"
+    t.string   "street_num_line_2"
     t.string   "street"
     t.string   "city"
     t.string   "state"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150305191507) do
     t.integer  "num_tech_workers"
     t.integer  "num_non_tech_workers"
     t.string   "website_url"
+    t.string   "thumbnail_url"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
@@ -64,16 +65,24 @@ ActiveRecord::Schema.define(version: 20150305191507) do
 
   add_index "individual_attributes", ["attribute_group_id"], name: "index_individual_attributes_on_attribute_group_id"
 
+  create_table "response_employee_types", force: :cascade do |t|
+    t.integer  "response_id"
+    t.integer  "employee_type_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "response_employee_types", ["employee_type_id"], name: "index_response_employee_types_on_employee_type_id"
+  add_index "response_employee_types", ["response_id"], name: "index_response_employee_types_on_response_id"
+
   create_table "responses", force: :cascade do |t|
     t.integer  "company_id"
     t.integer  "individual_attribute_id"
-    t.integer  "employee_type_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
   add_index "responses", ["company_id"], name: "index_responses_on_company_id"
-  add_index "responses", ["employee_type_id"], name: "index_responses_on_employee_type_id"
   add_index "responses", ["individual_attribute_id"], name: "index_responses_on_individual_attribute_id"
 
   create_table "survey_attribute_groups", force: :cascade do |t|
