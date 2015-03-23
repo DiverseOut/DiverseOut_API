@@ -1,27 +1,8 @@
-DiverseOut API
+#DiverseOut
+#### DiverseOut Server
 
-This is the back-end server side API that serves DiverseOut, a site that aggregates data on tech companies' diversity statistics.
+DiverseOut spreads the release of tech companies' diversity data. View aggregated data or create a survey for your own company. Because the tech industry's most pressing problems aren't technical.
 
-To-do:
-
-- Verify Migrations (make sure ALL relationships are accurate)
-- Set up Routes (make sure resources are correct)
-- Define endpoints
-- Deploy to Heroku
+##### The DiverseOut server is built using the Ruby on Rails and the Rails API gem.
 
 ![schema](schema.png)
-
-attributes:
-
-- num_male
-- num_female
-- num_gender_decline_to_state
-- num_gender_other
-- num_white
-- num_asian
-- num_hispanic
-- num_black
-- num_undeclared_race
-- num_multiracial
-
-- etc, etc, etc
