@@ -23,7 +23,8 @@ class SurveysController < ApplicationController
 
   def create
     survey = Survey.create(company_id: params[:company_id], secret_login_key: params[:secret_login])
-    attribute_group_ids = attribute_groups
+
+    attribute_group_ids = eval(params[:attribute_groups])
 
     attribute_group_ids.each do |group_id|
       survey.attribute_groups << AttributeGroup.find(group_id)
@@ -48,6 +49,6 @@ class SurveysController < ApplicationController
 
   private
     def attr_groups
-      params.permit(attribute_groups:[])
+      params.permit(:attribute_groups => [])
     end
 end
