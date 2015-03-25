@@ -1,5 +1,23 @@
 class ResponsesController < ApplicationController
 
+  def index
+    # responses = Response.where(company_id: params[:company_id])
+    attributes = IndividualAttribute.all
+
+    response_arr = []
+
+    attributes.each do |attribute|
+      response_arr << {
+        attribute.attribute_name => Response.where(
+          company_id: params[:company_id],
+          individual_attribute_id: attribute.id
+          ).length
+      }
+    end
+
+    render :json => response_arr
+  end
+
   def create
     response = Response.create(
       company_id: params[:company_id],
