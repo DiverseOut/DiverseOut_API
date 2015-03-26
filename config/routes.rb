@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   get 'attribute_groups', to: 'attribute_groups#index'
 
-  # get 'companies/:company_id/responses', to: 'responses#show_all'
-
   match '/*path' => 'application#options', :via => :options
 
   resources :admins do

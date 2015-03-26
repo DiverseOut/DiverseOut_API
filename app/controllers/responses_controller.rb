@@ -1,7 +1,7 @@
 class ResponsesController < ApplicationController
 
   def index
-    # attributes = IndividualAttribute.all
+    # FIND NUMBER OF SURVEYS SUBMITTED (Diff from num of response. How to find this?)
     company_total_employees = Company.find(params[:company_id]).num_total_employees
     company_total_responses = Response.where(company_id: params[:company_id]).length
 
