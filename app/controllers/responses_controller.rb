@@ -1,30 +1,29 @@
 class ResponsesController < ApplicationController
 
   def index
-    attributes = IndividualAttribute.all
+    # attributes = IndividualAttribute.all
     company_total_employees = Company.find(params[:company_id]).num_total_employees
     company_total_responses = Response.where(company_id: params[:company_id]).length
 
     response_arr = []
-
-
-## Refactor (make "title" key for each attr group "value. Then "responses" key and ...)
+# Refactor!!
     AttributeGroup.all.each do |group|
       response_obj = {}
       attr_response_obj = {}
+      response_obj["field_title"] = "#{group.group_name}"
+      response_obj["responses"] = []
 
         group.individual_attributes.each do |attribute|
-          attr_response_obj["#{attribute.attribute_name}"] = Response.where(
-            company_id: params[:company_id],
-            individual_attribute_id: attribute.id
-          ).length
-
-        response_obj["#{group.group_name}"] = attr_response_obj
-
+          response_obj["responses"] << {
+            "attribute_title" => "#{attribute.attribute_name}",
+            "value" => Response.where(
+              company_id: params[:company_id],
+              individual_attribute_id: attribute.id
+            ).length
+          }
+        end
         response_arr << response_obj
       end
-
-    end
 
     render :json => {
       company_total_employees: company_total_employees,
