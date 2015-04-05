@@ -1,9 +1,7 @@
 class ResponsesController < ApplicationController
 
   def index
-    # FIND NUMBER OF SURVEYS SUBMITTED (Diff from num of response. How to find this?)
-    company_total_employees = Company.find(params[:company_id]).num_total_employees
-    company_total_responses = Response.where(company_id: params[:company_id]).length
+    # FIND OUT HOW TO RETURN NUMBER OF SURVEYS SUBMITTED (Diff from num of responses. How to find this?)
 
     response_arr = []
 # Refactor!!
@@ -26,8 +24,8 @@ class ResponsesController < ApplicationController
       end
 
     render :json => {
-      company_total_employees: company_total_employees,
-      company_total_responses: company_total_responses,
+      company_info: Company.find(params[:company_id]),
+      company_total_responses: Response.where(company_id: params[:company_id]).length,
       response_stats: response_arr
     }
   end
