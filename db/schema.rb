@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20150322214347) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "attributes", force: :cascade do |t|
+    t.integer  "attribute_group_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "attributes", ["attribute_group_id"], name: "index_attributes_on_attribute_group_id"
+
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.integer  "street_num"
