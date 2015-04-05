@@ -1,21 +1,33 @@
 class ResponsesController < ApplicationController
 
   def index
-    # responses = Response.where(company_id: params[:company_id])
-    attributes = IndividualAttribute.all
+    # FIND OUT HOW TO RETURN NUMBER OF SURVEYS SUBMITTED (Diff from num of responses. How to find this?)
 
     response_arr = []
+# Refactor!!
+    AttributeGroup.all.each do |group|
+      response_obj = {}
+      attr_response_obj = {}
+      response_obj["field_title"] = "#{group.group_name}"
+      response_obj["responses"] = []
 
-    attributes.each do |attribute|
-      response_arr << {
-        attribute.attribute_name => Response.where(
-          company_id: params[:company_id],
-          individual_attribute_id: attribute.id
-          ).length
-      }
-    end
+        group.individual_attributes.each do |attribute|
+          response_obj["responses"] << {
+            "attribute_title" => "#{attribute.attribute_name}",
+            "value" => Response.where(
+              company_id: params[:company_id],
+              individual_attribute_id: attribute.id
+            ).length
+          }
+        end
+        response_arr << response_obj
+      end
 
-    render :json => response_arr
+    render :json => {
+      company_info: Company.find(params[:company_id]),
+      company_total_responses: Response.where(company_id: params[:company_id]).length,
+      response_stats: response_arr
+    }
   end
 
   def create
