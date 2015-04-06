@@ -36,7 +36,7 @@ class ResponsesController < ApplicationController
       individual_attribute_id: params[:attribute_id]
     )
 
-    employee_type_ids = eval(params[:employee_types])
+    employee_type_ids = params[:employee_types]
 
     employee_type_ids.each do |type_id|
       response.employee_types << EmployeeType.find(type_id)
