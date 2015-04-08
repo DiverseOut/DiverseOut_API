@@ -11,9 +11,10 @@ Read [more thoughts](http://philril.github.io/blog/c4-tech-issues.html) on why d
 ![schema](schema.png)
 
 ##### Local setup instructions:
-- Download and install the [Shotgun](https://github.com/rtomayko/shotgun) gem.
-- Use shotgun to open the 'config.ru' file. This will run the server on port 9393.
-- Open your browser and navigate to 'localhost:9393'.
+- Run "bundle install" in command line
+- Use rake commands to create, migrate, and seed database in development environment
+- Run "rails server" in command line
+- Open browser to local host on port 3000
 - Follow the instructions [here](https://github.com/philril/DiverseOut_Client) to also run the DiverseOut Client locally.
 
 ##### DiverseOut Server is built using the following technologies:
