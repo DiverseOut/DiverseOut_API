@@ -11,10 +11,10 @@ Read [more thoughts](http://philril.github.io/blog/c4-tech-issues.html) on why d
 ![schema](schema.png)
 
 ##### Local setup instructions:
-- Run "bundle install" in command line
-- Use rake commands to create, migrate, and seed database in development environment
-- Run "rails server" in command line
-- Open browser to local host on port 3000
+- Run "bundle install" in command line.
+- Use rake commands to create, migrate, and seed database in development environment.
+- Run "rails server" in command line.
+- Open browser to local host on port 3000.
 - Follow the instructions [here](https://github.com/philril/DiverseOut_Client) to also run the DiverseOut Client locally.
 
 ##### DiverseOut Server is built using the following technologies:
