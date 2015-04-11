@@ -38,8 +38,10 @@ class ResponsesController < ApplicationController
 
     employee_type_ids = params[:employee_types]
 
-    employee_type_ids.each do |type_id|
-      response.employee_types << EmployeeType.find(type_id)
+    if employee_type_ids != nil
+      employee_type_ids.each do |type_id|
+        response.employee_types << EmployeeType.find(type_id)
+      end
     end
 
     if response.save
