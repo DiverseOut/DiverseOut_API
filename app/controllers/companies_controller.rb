@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-  before_filter :cors
 
   def index
     companies = Company.all
@@ -45,15 +44,13 @@ class CompaniesController < ApplicationController
   end
 
   def upvote
+    company = Company.find(params[:id])
+    company.upvote
   end
 
   def downvote
-  end
-
-  def cors
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, PATCH, DELETE, OPTIONS'
-    headers['Access-Control-Allow-Headers'] = 'Origin Content-Type, Accept, Authorization, Token'
+    company = Company.find(params[:id])
+    company.downvote
   end
 
   private
