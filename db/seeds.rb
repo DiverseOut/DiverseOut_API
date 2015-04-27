@@ -13,7 +13,7 @@ facebook = Company.create(
   city: "Palo Alto",
   state: "California",
   country: "USA"
-  )
+)
 
 google = Company.create(
   name: "Google",
@@ -24,7 +24,69 @@ google = Company.create(
   city: "Mountain View",
   state: "California",
   country: "USA"
-  )
+)
+
+prestige_worldwide = Company.create(
+  name: "Prestige Worldwide",
+  id: 3,
+  street_num: 123,
+  street: "Fake Street",
+  city: "San Francisco",
+  state: "California",
+  country: "USA"
+  website_url: "https://yt3.ggpht.com/-lBzt1swezvM/AAAAAAAAAAI/AAAAAAAAAAA/VbDDztkCaYk/s900-c-k-no/photo.jpg",
+  thumbnail_url: "http://ih3.redbubble.net/image.8353337.1954/sticker,375x360.u2.png"
+)
+
+############ ADMINS ##################
+
+my_profile = Admin.create(
+  company_id: 3,
+  first_name: "Philip",
+  last_name: "Riley",
+  job_title: "Benevolent Dictator",
+  email: "hiriley@comcast.net",
+  password_hash: "c936396328b437d979c2fc616d81433cba1c8247"
+)
+
+prestige_worldwide.admins << my_profile
+
+############ RESPONSES (for Prestige Worldwide) ##################
+
+50.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+70.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+70.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Transsexual").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+70.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+25.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
+
+25.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  prestige_worldwide << Response.create(individual_attribute_id: attribute)
+end
 
 ############ EMPLOYEE GROUPS ##################
 

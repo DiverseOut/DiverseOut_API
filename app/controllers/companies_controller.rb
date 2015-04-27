@@ -29,7 +29,11 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params[:id])
 
-    if company.update(company_params)
+    p company
+    puts
+    p company_params
+
+    if company.update_attributes(company_params)
       redirect_to company
     else
       render 'edit'
@@ -38,9 +42,11 @@ class CompaniesController < ApplicationController
 
   def destroy
     company = Company.find(params[:id])
-    company.destroy
-    flash[:success] = "Company Destroyed"
-    redirect_to root_path
+    if company.destroy
+      redirect_to root_path
+    else
+      render :json => {:errors => "Delete Unsuccessful"}
+    end
   end
 
   def upvote
