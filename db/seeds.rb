@@ -12,8 +12,10 @@ facebook = Company.create(
   street: "Facebook Street",
   city: "Palo Alto",
   state: "California",
-  country: "USA"
-  )
+  country: "USA",
+  website_url: "https://www.facebook.com/",
+  thumbnail_url: "http://a3.mzstatic.com/us/r30/Purple1/v4/1d/fe/dd/1dfedd84-5010-9274-b60b-65e1d04438e1/icon320x320.jpeg"
+)
 
 google = Company.create(
   name: "Google",
@@ -23,8 +25,35 @@ google = Company.create(
   street: "Google Street",
   city: "Mountain View",
   state: "California",
-  country: "USA"
-  )
+  country: "USA",
+  website_url: "https://www.google.com/",
+  thumbnail_url: "http://assets.programmatic-italia.com/2014/12/Google.png"
+)
+
+prestige_worldwide = Company.create(
+  name: "Prestige Worldwide",
+  id: 3,
+  street_num: 123,
+  street: "Fake Street",
+  city: "San Francisco",
+  state: "California",
+  country: "USA",
+  website_url: "https://www.youtube.com/watch?v=ciS914MaDl8",
+  thumbnail_url: "http://ih3.redbubble.net/image.8353337.1954/sticker,375x360.u2.png"
+)
+
+############ ADMINS ##################
+
+my_profile = Admin.create(
+  company_id: 3,
+  first_name: "Philip",
+  last_name: "Riley",
+  job_title: "Benevolent Dictator",
+  email: "hiriley@comcast.net",
+  password_hash: "c936396328b437d979c2fc616d81433cba1c8247"
+)
+
+prestige_worldwide.admins << my_profile
 
 ############ EMPLOYEE GROUPS ##################
 
@@ -152,6 +181,8 @@ religion = AttributeGroup.create(group_name: "Religion")
 
 religion.individual_attributes << IndividualAttribute.new(attribute_name: "Animist religions")
 
+religion.individual_attributes << IndividualAttribute.new(attribute_name: "Athiest")
+
 religion.individual_attributes << IndividualAttribute.new(attribute_name: "Baha'i")
 
 religion.individual_attributes << IndividualAttribute.new(attribute_name: "Buddhism")
@@ -188,7 +219,7 @@ religion.individual_attributes << IndividualAttribute.new(attribute_name: "Tenri
 
 religion.individual_attributes << IndividualAttribute.new(attribute_name: "Unitarian Universalism")
 
-religion.individual_attributes << IndividualAttribute.new(attribute_name: "Unitarian Universalism")
+religion.individual_attributes << IndividualAttribute.new(attribute_name: "Other")
 
 ################ EDUCATION ################
 
@@ -208,10 +239,171 @@ education.individual_attributes << IndividualAttribute.new(attribute_name: "BA/B
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Some graduate work")
 
-education.individual_attributes << IndividualAttribute.new(attribute_name: "Graduate Degree (MA, MS, JD, etc)")
+education.individual_attributes << IndividualAttribute.new(attribute_name: "Graduate Degree")
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral work")
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Doctoral degree (Ph.D. , MD)")
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Trade school diploma/certificate")
+
+
+############ SEED RESPONSES (for Prestige Worldwide) ##################
+
+# GENDER
+50.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+70.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Intersex").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Transsexual").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+# RACE
+70.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+25.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+25.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+25.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Native American or Alaska Native").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+3.times do
+  attribute = IndividualAttribute.where(attribute_name:"Native Hawaiian or Other Pacific Islander").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+# SEXUAL ORIENTATION
+
+100.times do
+  attribute = IndividualAttribute.where(attribute_name:"HeteroSexual").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Gay").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+5.times do
+  attribute = IndividualAttribute.where(attribute_name:"Lesbian").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+3.times do
+  attribute = IndividualAttribute.where(attribute_name:"Bisexual").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+# FAMILY STATUS
+
+50.times do
+  attribute = IndividualAttribute.where(attribute_name:"Married").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+20.times do
+  attribute = IndividualAttribute.where(attribute_name:"Single").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+10.times do
+  attribute = IndividualAttribute.where(attribute_name:"Divorced").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Widowed").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Civil Unioned").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+# DISABILITY
+
+
+# RELIGION
+
+50.times do
+  attribute = IndividualAttribute.where(attribute_name:"Christianity").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Islam").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+15.times do
+  attribute = IndividualAttribute.where(attribute_name:"Judaism").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Buddhism").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+10.times do
+  attribute = IndividualAttribute.where(attribute_name:"Athiest").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+# EDUCATION
+
+100.times do
+  attribute = IndividualAttribute.where(attribute_name:"BA/BS degree").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Some graduate work").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+10.times do
+  attribute = IndividualAttribute.where(attribute_name:"Graduate Degree").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+10.times do
+  attribute = IndividualAttribute.where(attribute_name:"High School Diploma").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end
+
+10.times do
+  attribute = IndividualAttribute.where(attribute_name:"Some College").first.id
+  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+end

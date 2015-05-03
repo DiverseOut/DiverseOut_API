@@ -1,5 +1,7 @@
 class SurveysController < ApplicationController
 
+#todo: add survey names
+
   def index
     surveys = Survey.all
     render :json => surveys

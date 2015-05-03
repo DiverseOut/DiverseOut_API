@@ -1,23 +1,34 @@
+require_relative "../helpers/responses_helper.rb"
+
 class ResponsesController < ApplicationController
+  include ResponsesHelper
 
   def index
-    # FIND OUT HOW TO RETURN NUMBER OF SURVEYS SUBMITTED (Diff from num of responses. How to find this?)
 
+# REFACTOR!!!
     response_arr = []
-# Refactor!!
+    company_total_responses = Response.where(company_id: params[:company_id]).length
+
     AttributeGroup.all.each do |group|
+
       response_obj = {}
       attr_response_obj = {}
       response_obj["field_title"] = "#{group.group_name}"
       response_obj["responses"] = []
 
+        attribute_responses = Response.joins(:individual_attribute=>:attribute_group).where(:attribute_groups=>{:id=>group.id}).length
+
         group.individual_attributes.each do |attribute|
+
+          value = Response.where(
+            company_id: params[:company_id],
+            individual_attribute_id: attribute.id
+          ).length
+
           response_obj["responses"] << {
             "attribute_title" => "#{attribute.attribute_name}",
-            "value" => Response.where(
-              company_id: params[:company_id],
-              individual_attribute_id: attribute.id
-            ).length
+            "value" => value,
+            "percentage" => percentage(value, attribute_responses)
           }
         end
         response_arr << response_obj
@@ -25,7 +36,7 @@ class ResponsesController < ApplicationController
 
     render :json => {
       company_info: Company.find(params[:company_id]),
-      company_total_responses: Response.where(company_id: params[:company_id]).length,
+      company_total_responses: company_total_responses,
       response_stats: response_arr
     }
   end

@@ -1,7 +1,4 @@
-FactoryGirl.define do  factory :response_employee_type do
-    
-  end
-
+FactoryGirl.define do
 
   factory :company do
     name "LinkedIn"
@@ -10,7 +7,7 @@ FactoryGirl.define do  factory :response_employee_type do
     city "San Francisco"
     country "USA"
     website_url "www.LinkedIn.com"
-    # thumbnail_url "www.LinkedIn.com"
+    thumbnail_url "www.LinkedIn.com"
   end
 
 end

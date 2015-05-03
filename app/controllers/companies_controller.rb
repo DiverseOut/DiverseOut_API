@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-  before_filter :cors
 
   def index
     companies = Company.all
@@ -30,7 +29,11 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params[:id])
 
-    if company.update(company_params)
+    p company
+    puts
+    p company_params
+
+    if company.update_attributes(company_params)
       redirect_to company
     else
       render 'edit'
@@ -39,21 +42,21 @@ class CompaniesController < ApplicationController
 
   def destroy
     company = Company.find(params[:id])
-    company.destroy
-    flash[:success] = "Company Destroyed"
-    redirect_to root_path
+    if company.destroy
+      redirect_to root_path
+    else
+      render :json => {:errors => "Delete Unsuccessful"}
+    end
   end
 
   def upvote
+    company = Company.find(params[:id])
+    company.upvote
   end
 
   def downvote
-  end
-
-  def cors
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, PATCH, DELETE, OPTIONS'
-    headers['Access-Control-Allow-Headers'] = 'Origin Content-Type, Accept, Authorization, Token'
+    company = Company.find(params[:id])
+    company.downvote
   end
 
   private
