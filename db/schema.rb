@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150322214347) do
     t.integer  "num_non_tech_workers"
     t.string   "website_url"
     t.string   "thumbnail_url"
+    t.integer  "votes"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
