@@ -32,14 +32,6 @@ ActiveRecord::Schema.define(version: 20150322214347) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "attributes", force: :cascade do |t|
-    t.integer  "attribute_group_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "attributes", ["attribute_group_id"], name: "index_attributes_on_attribute_group_id"
-
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.integer  "street_num"
@@ -47,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150322214347) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
+    t.integer  "zip_code"
     t.string   "country"
     t.integer  "num_total_employees"
     t.integer  "num_managers"
@@ -54,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150322214347) do
     t.integer  "num_non_tech_workers"
     t.string   "website_url"
     t.string   "thumbnail_url"
+    t.string   "source"
     t.integer  "votes"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
