@@ -4,8 +4,7 @@ class ResponsesController < ApplicationController
   include ResponsesHelper
 
   def index
-
-# REFACTOR!!!
+  # REFACTOR!!! This could probably be much faster/use less memory
     response_arr = []
     company_total_responses = Response.where(company_id: params[:company_id]).length
 
@@ -16,14 +15,11 @@ class ResponsesController < ApplicationController
       response_obj["field_title"] = "#{group.group_name}"
       response_obj["responses"] = []
 
-        attribute_responses = Response.joins(:individual_attribute=>:attribute_group).where(:attribute_groups=>{:id=>group.id}).length
+        attribute_responses = Response.joins(:individual_attribute=>:attribute_group).where(company_id: params[:company_id], :attribute_groups=>{:id=>group.id}).length
 
         group.individual_attributes.each do |attribute|
 
-          value = Response.where(
-            company_id: params[:company_id],
-            individual_attribute_id: attribute.id
-          ).length
+          value = Response.where(company_id: params[:company_id], individual_attribute_id: attribute.id).length
 
           response_obj["responses"] << {
             "attribute_title" => "#{attribute.attribute_name}",
@@ -31,21 +27,22 @@ class ResponsesController < ApplicationController
             "percentage" => percentage(value, attribute_responses)
           }
         end
+        #Sort responses by percentage for presentation
+          response_obj["responses"].sort_by!{|item|item["percentage"]}.reverse!
+
         response_arr << response_obj
       end
 
     render :json => {
       company_info: Company.find(params[:company_id]),
       company_total_responses: company_total_responses,
+      last_update: Response.where(company_id: params[:company_id]).last.created_at,
       response_stats: response_arr
     }
   end
 
   def create
-    response = Response.create(
-      company_id: params[:company_id],
-      individual_attribute_id: params[:attribute_id]
-    )
+    response = Response.create(company_id: params[:company_id], individual_attribute_id: params[:attribute_id])
 
     employee_type_ids = params[:employee_types]
 
