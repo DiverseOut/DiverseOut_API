@@ -1,7 +1,5 @@
 class SurveysController < ApplicationController
 
-#todo: add survey names
-
   def index
     surveys = Survey.all
     render :json => surveys
@@ -16,6 +14,7 @@ class SurveysController < ApplicationController
     end
 
     survey_obj = {
+      company_info: Company.find(params[:company_id]),
       employee_types: EmployeeType.all,
       attribute_groups: attribute_groups
     }
@@ -24,7 +23,7 @@ class SurveysController < ApplicationController
   end
 
   def create
-    survey = Survey.create(company_id: params[:company_id], secret_login_key: params[:secret_login])
+    survey = Survey.create(name: params[:name], company_id: params[:company_id], secret_login_key: params[:secret_login])
 
     attribute_group_ids = eval(params[:attribute_groups])
 
@@ -41,6 +40,7 @@ class SurveysController < ApplicationController
   end
 
   def edit
+    survey = Survey.find(params[:id])
   end
 
   def update
