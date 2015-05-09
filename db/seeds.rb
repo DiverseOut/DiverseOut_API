@@ -2,7 +2,7 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-############ MOCK COMPANIES ##################
+############ COMPANIES ##################
 
 facebook = Company.create(
   name: "Facebook",
@@ -10,7 +10,7 @@ facebook = Company.create(
   street_num: 1,
   street: "Hacker Way",
   city: "Palo Alto",
-  state: "California",
+  state: "CA",
   country: "USA",
   zip_code: 94025,
   website_url: "https://www.facebook.com/",
@@ -22,9 +22,9 @@ google = Company.create(
   name: "Google",
   id: 2,
   street_num: 1600,
-  street: "Ampitheatre PArkway",
+  street: "Ampitheatre Parkway",
   city: "Mountain View",
-  state: "California",
+  state: "CA",
   country: "USA",
   zip_code: 94043,
   website_url: "https://www.google.com/",
@@ -32,17 +32,18 @@ google = Company.create(
   source: "http://www.google.com/diversity/at-google.html"
 )
 
-prestige_worldwide = Company.create(
-  name: "Prestige Worldwide",
+# Mock Company Test
+vandelay = Company.create(
+  name: "Vandelay Industries",
   id: 3,
   street_num: 123,
   street: "Fake Street",
-  city: "San Francisco",
-  state: "California",
+  city: "New York",
+  state: "NY",
   country: "USA",
-  zip_code: 94043,
-  website_url: "https://www.youtube.com/watch?v=ciS914MaDl8",
-  thumbnail_url: "http://ih3.redbubble.net/image.8353337.1954/sticker,375x360.u2.png"
+  zip_code: 10001,
+  website_url: "https://www.youtube.com/watch?v=OefQwYN6vbM",
+  thumbnail_url: "http://www.tshirtbordello.com/images/Vandelay-Industries.gif"
 )
 
 apple = Company.create(
@@ -51,7 +52,7 @@ apple = Company.create(
   street_num: 1,
   street: "Infinite Loop",
   city: "Cupertino",
-  state: "California",
+  state: "CA",
   country: "USA",
   zip_code: 94051,
   website_url: "https://www.apple.com/",
@@ -66,7 +67,7 @@ twitter = Company.create(
   street_num_line_2: "#900",
   street: "Market Street",
   city: "San Francisco",
-  state: "California",
+  state: "CA",
   country: "USA",
   zip_code: 94103,
   website_url: "https://www.twitter.com/",
@@ -78,15 +79,144 @@ yelp = Company.create(
   name: "Yelp",
   id: 6,
   street_num: 140,
-  street: "New Montgomery",
+  street: "New Montgomery Street",
   city: "San Francisco",
-  state: "California",
+  state: "CA",
   country: "USA",
   zip_code: 94105,
   website_url: "https://www.yelp.com/",
-  thumbnail_url: "http://www.technet.org/wp-content/uploads/2010/09/yelpLogoHires-sm.jpg",
+  thumbnail_url: "http://bbassembly.com/wp-content/uploads/2014/09/yelp-icon-transparent-150x150.png",
   source: "http://officialblog.yelp.com/2014/08/workforce-diversity-at-yelp.html"
 )
+
+linkedin = Company.create(
+  name: "LinkedIn",
+  id: 7,
+  street_num: 2029,
+  street: "Stierlin Court",
+  city: "Mountain View",
+  state: "CA",
+  country: "USA",
+  zip_code: 94043,
+  website_url: "https://www.linkedin.com/",
+  thumbnail_url: "http://www.njsacc.org/wordpress/wp-content/uploads/transparent-Linkedin-logo-icon.png",
+  source: "http://blog.linkedin.com/2014/06/12/linkedins-workforce-diversity/"
+)
+
+pandora = Company.create(
+  name: "Pandora",
+  id: 8,
+  street_num: 2101,
+  street_num_line_2:"#1650",
+  street: "Webster Street",
+  city: "Oakland",
+  state: "CA",
+  country: "USA",
+  zip_code: 94612,
+  website_url: "https://www.pandora.com/",
+  thumbnail_url: "http://angelstreetcapital.com/wp-content/uploads/pandora1.png",
+  source: "http://www.pandora.com/careers/"
+)
+
+salesforce = Company.create(
+  name: "Salesforce",
+  id: 9,
+  street_num: 1,
+  street_num_line_2:"#300",
+  street: "Market Street",
+  city: "San Francisco",
+  state: "CA",
+  country: "USA",
+  zip_code: 94105,
+  website_url: "https://www.salesforce.com/",
+  thumbnail_url: "http://camara.org/wp-content/uploads/2014/11/Salesforce_Logo_RGB_8_13_14.png",
+  source: "http://www.salesforce.com/company/careers/diversity-numbers.jsp"
+)
+
+ebay = Company.create(
+  name: "eBay",
+  id: 10,
+  street_num: 2065,
+  street: "Hamilton Avenue",
+  city: "San Jose",
+  state: "CA",
+  country: "USA",
+  zip_code: 95125,
+  website_url: "https://www.ebay.com/",
+  thumbnail_url: "http://assets.cobaltnitra.com/teams/repository/export/v/1/899/ee8d05a5510058f9900146edef087/899ee8d05a5510058f9900146edef087.png",
+  source: "http://blog.ebay.com/building-stronger-better-diverse-ebay/"
+)
+
+amazon = Company.create(
+  name: "Amazon",
+  id: 11,
+  street_num: 410,
+  street: "Terry Avenue North",
+  city: "Seattle",
+  state: "Washington",
+  country: "USA",
+  zip_code: 98109,
+  website_url: "https://www.amazon.com/",
+  thumbnail_url: "https://lh3.googleusercontent.com/---a1_7YqKoE/AAAAAAAAAAI/AAAAAAAAADw/Ppn51Ax9RRI/photo.jpg",
+  source: "http://www.amazon.com/b/ref=tb_surl_diversity/?node=10080092011"
+)
+
+microsoft = Company.create(
+  name: "Microsoft",
+  id: 12,
+  street_num: 1,
+  street: "Microsoft Way",
+  city: "Redmond",
+  state: "Washington",
+  country: "USA",
+  zip_code: 98052,
+  website_url: "https://www.microsoft.com/",
+  thumbnail_url: "http://www.spheregen.com/wp-content/uploads/2015/01/microsoft_logo_2012.png",
+  source: "http://news.microsoft.com/facts-about-microsoft/#EmploymentInfo"
+)
+
+yahoo = Company.create(
+  name: "Yahoo",
+  id: 13,
+  street_num: 701,
+  street: "First Avenue",
+  city: "Sunnyvale",
+  state: "CA",
+  country: "USA",
+  zip_code: 94089,
+  website_url: "https://www.yahoo.com/",
+  thumbnail_url: "http://icons.iconarchive.com/icons/emey87/social-button/128/yahoo-icon.png",
+  source: "http://yahoo.tumblr.com/post/89085398949/workforce-diversity-at-yahoo"
+)
+
+intel = Company.create(
+  name: "Intel",
+  id: 14,
+  street_num: 2200,
+  street: "Mission College Boulevard",
+  city: "Santa Clara",
+  state: "CA",
+  country: "USA",
+  zip_code: 95054,
+  website_url: "https://www.intel.com/",
+  thumbnail_url: "http://tdumods.com/e107_plugins/greygallery2/content/2012_05_02_1335959652_360.png",
+  source: "http://www.intel.com/content/www/us/en/company-overview/equal-employment-opportunity-employer-info-report.html"
+)
+
+groupon = Company.create(
+  name: "Groupon",
+  id: 15,
+  street_num: 3101,
+  street: "Park Boulevard",
+  city: "Palo Alto",
+  state: "CA",
+  country: "USA",
+  zip_code: 94306,
+  website_url: "https://www.groupon.com/",
+  thumbnail_url: "http://www.accountcleaner.com/wp-content/uploads/2014/06/GroupON.png",
+  source: "https://www.groupon.com/blog/cities/groupon-releases-diversity-data"
+)
+
 
 ############ ADMINS ##################
 
@@ -99,7 +229,7 @@ my_profile = Admin.create(
   password_hash: "c936396328b437d979c2fc616d81433cba1c8247"
 )
 
-prestige_worldwide.admins << my_profile
+vandelay.admins << my_profile
 
 ############ EMPLOYEE GROUPS ##################
 
@@ -110,7 +240,7 @@ tech_workers = EmployeeType.create(type_name: "Tech Worker/Engineer")
 ############ GENDER #####################
 
 gender = AttributeGroup.create(
-  group_name: "Gender Identity"
+  group_name: "Gender"
 )
 
 gender.individual_attributes << IndividualAttribute.new(
@@ -141,7 +271,13 @@ gender.individual_attributes << IndividualAttribute.new(
     attribute_name: "FTM (female-to-male)"
   )
 
-gender.individual_attributes << IndividualAttribute.new(attribute_name: "GenderQueer")
+gender.individual_attributes << IndividualAttribute.new(
+  attribute_name: "GenderQueer"
+  )
+
+gender.individual_attributes << IndividualAttribute.new(
+  attribute_name: "Other/Not Disclosed"
+  )
 
 ################ RACE #####################
 
@@ -211,6 +347,25 @@ family_status.individual_attributes << IndividualAttribute.new(attribute_name: "
 
 family_status.individual_attributes << IndividualAttribute.new(attribute_name: "Civil Unioned")
 
+################ Age ################
+
+age = AttributeGroup.create(group_name: "Age")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "18 or under")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "18-24")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "25-44")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "45-64")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "65+")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "29 or under")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "30-39")
+
+age.individual_attributes << IndividualAttribute.new(attribute_name: "40+")
 
 ################ DISABILITY ################
 
@@ -298,107 +453,107 @@ education.individual_attributes << IndividualAttribute.new(attribute_name: "Doct
 
 education.individual_attributes << IndividualAttribute.new(attribute_name: "Trade school diploma/certificate")
 
-############ SEED RESPONSES (for Prestige Worldwide) ##################
+############ SEED RESPONSES (for Vandelay Industries) ##################
 
 # GENDER
 50.times do
   attribute = IndividualAttribute.where(attribute_name:"Male").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 70.times do
   attribute = IndividualAttribute.where(attribute_name:"Female").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 1.times do
   attribute = IndividualAttribute.where(attribute_name:"Intersex").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 2.times do
   attribute = IndividualAttribute.where(attribute_name:"Transsexual").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 # RACE
 70.times do
   attribute = IndividualAttribute.where(attribute_name:"White").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 25.times do
   attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 25.times do
   attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 25.times do
   attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Native American or Alaska Native").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 3.times do
   attribute = IndividualAttribute.where(attribute_name:"Native Hawaiian or Other Pacific Islander").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 # SEXUAL ORIENTATION
 
 100.times do
   attribute = IndividualAttribute.where(attribute_name:"HeteroSexual").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Gay").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 5.times do
   attribute = IndividualAttribute.where(attribute_name:"Lesbian").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 3.times do
   attribute = IndividualAttribute.where(attribute_name:"Bisexual").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 # FAMILY STATUS
 
 50.times do
   attribute = IndividualAttribute.where(attribute_name:"Married").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 20.times do
   attribute = IndividualAttribute.where(attribute_name:"Single").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 10.times do
   attribute = IndividualAttribute.where(attribute_name:"Divorced").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 2.times do
   attribute = IndividualAttribute.where(attribute_name:"Widowed").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Civil Unioned").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 # DISABILITY
@@ -408,54 +563,54 @@ end
 
 50.times do
   attribute = IndividualAttribute.where(attribute_name:"Christianity").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Islam").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 15.times do
   attribute = IndividualAttribute.where(attribute_name:"Judaism").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Buddhism").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 10.times do
   attribute = IndividualAttribute.where(attribute_name:"Athiest").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 # EDUCATION
 
 100.times do
   attribute = IndividualAttribute.where(attribute_name:"BA/BS degree").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 7.times do
   attribute = IndividualAttribute.where(attribute_name:"Some graduate work").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 10.times do
   attribute = IndividualAttribute.where(attribute_name:"Graduate Degree").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 10.times do
   attribute = IndividualAttribute.where(attribute_name:"High School Diploma").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 10.times do
   attribute = IndividualAttribute.where(attribute_name:"Some College").first.id
-  prestige_worldwide.responses << Response.create(individual_attribute_id: attribute)
+  vandelay.responses << Response.create(individual_attribute_id: attribute)
 end
 
 ############ SEED RESPONSES (for Facebook) ##################
@@ -689,4 +844,381 @@ end
 1.times do
   attribute = IndividualAttribute.where(attribute_name:"Other").first.id
   yelp.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for linkedin) ##################
+
+#Gender
+61.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+39.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+53.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+38.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  linkedin.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for pandora) ##################
+
+#Gender
+51.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+49.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+71.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+12.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+7.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+3.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+6.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Native Hawaiian or Other Pacific Islander").first.id
+  pandora.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for salesforce) ##################
+
+#Gender
+71.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+29.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+67.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+22.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+3.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other").first.id
+  salesforce.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for ebay) ##################
+
+#Gender
+58.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  ebay.responses << Response.create(individual_attribute_id: attribute)
+end
+
+42.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  ebay.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for amazon) ##################
+
+#Gender
+63.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+37.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+60.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+13.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+9.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+15.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+3.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other").first.id
+  amazon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for microsoft) ##################
+
+#Gender
+72.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+28.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+59.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+29.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+5.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Native Hawaiian or Other Pacific Islander").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Age
+17.times do
+  attribute = IndividualAttribute.where(attribute_name:"29 or under").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+37.times do
+  attribute = IndividualAttribute.where(attribute_name:"30-39").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+46.times do
+  attribute = IndividualAttribute.where(attribute_name:"40+").first.id
+  microsoft.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for yahoo) ##################
+
+#Gender
+62.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+37.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other/Not Disclosed").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+50.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+39.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+2.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other").first.id
+  yahoo.responses << Response.create(individual_attribute_id: attribute)
+end
+
+############ SEED RESPONSES (for intel) ##################
+
+#Gender
+76.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+24.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+56.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+31.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+8.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Two Or More").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+1.times do
+  attribute = IndividualAttribute.where(attribute_name:"Native American or Alaska Native").first.id
+  intel.responses << Response.create(individual_attribute_id: attribute)
+end
+
+
+############ SEED RESPONSES (for groupon) ##################
+
+#Gender
+53.times do
+  attribute = IndividualAttribute.where(attribute_name:"Male").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+47.times do
+  attribute = IndividualAttribute.where(attribute_name:"Female").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+#Race
+71.times do
+  attribute = IndividualAttribute.where(attribute_name:"White").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+15.times do
+  attribute = IndividualAttribute.where(attribute_name:"Asian").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+5.times do
+  attribute = IndividualAttribute.where(attribute_name:"Hispanic").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Black or African American").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
+end
+
+4.times do
+  attribute = IndividualAttribute.where(attribute_name:"Other").first.id
+  groupon.responses << Response.create(individual_attribute_id: attribute)
 end

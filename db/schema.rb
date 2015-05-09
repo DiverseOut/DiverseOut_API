@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20150322214347) do
 
   create_table "surveys", force: :cascade do |t|
     t.integer  "company_id"
+    t.string   "name"
     t.string   "secret_login_key"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

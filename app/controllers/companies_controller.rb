@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
 
   def index
-    companies = Company.all
+    companies = Company.all.order(:name)
     render :json => companies
   end
 
@@ -29,15 +29,14 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params[:id])
 
-    p company
-    puts
-    p company_params
+    company.update_attributes(company_params)
 
-    if company.update_attributes(company_params)
-      redirect_to company
+    if company.save
+      render :json => company
     else
-      render 'edit'
+      render :json => {:errors => company.errors.full_messages}
     end
+
   end
 
   def destroy
